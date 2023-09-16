@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #FFF;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+  text-transform: capitalize;
+}
+li {
+  list-style-type: none; 
+ }
+ ul {
+  margin-left: 0;
+  padding-left: 0; 
+ }
+a{
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #13161e;
+  color: #FFF;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.search-games-wrapper{
+  position: sticky;
+  background-color: #13161e;
+  top: 55px;
+  margin-top: 10px;
+  z-index: 10;
+  padding-bottom: 10px;
+}
+.search-games-group{
+  max-width: 1200px;
+  padding: 0 25px;
+  margin: 0 auto;
+  position: relative;
+
+  input{
+    width: 100%;
+    background: transparent;
+    background: #28293f;
+    padding: 12px;
+    height: 47px;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    padding-right: 40px;
+    &::placeholder{
+      color: #61638c;
+    }
+  }
+  .search-icon{
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+.loadingPage{
+  background-color: #13161e;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.06);
+    }
+}
+  .loader-container {
+    width: 120px;
+    height: 120px;
+    position: relative;
+  
+    @for $i from 1 through 20 {
+      .loader-span-#{$i} {
+        --i: #{$i};
+        transform: rotate(calc(18deg * var(--i)));
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+  
+        &::before {
+          animation: 2s linear infinite smoke;
+          animation-delay: calc(0.1s * var(--i));
+          background: #E02946;
+          border-radius: 50%;
+          content: "";
+          left: 0;
+          position: absolute;
+          height: 18px;
+          top: 0;
+          transform: scale(0);
+          width: 18px;
+        }
+      }
+    }
+  
+    div {
+      animation: 2s linear infinite rocket;
+      color: white;
+      font-size: 46px;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+  
+      i {
+        left: 0;
+        position: absolute;
+        top: -64px;
+      }
+    }
+  }
+  
+
+
+  @keyframes smoke {
+    0% {
+      transform: scale(0);
+    }
+    
+    10% {
+      transform: scale(1);
+    }
+    
+    80%, 100% {
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes rocket {
+    0% {
+      transform: rotate(0);
+    }
+    
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}

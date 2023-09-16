@@ -1,0 +1,296 @@
+.deposit-wrapper{
+    padding: 25px;
+    .deposit-container{
+        border: 1px solid #28293f;
+        border-radius: 10px;
+        padding-bottom: 25px;
+        position: relative;
+        .deposit-sections{
+            display: flex;
+            .section-item{
+                width: 50%;
+                text-align: center;
+                background-color: #28293f;
+                padding: 10px 0;
+                font-weight: 500;
+                font-size: 16px;
+            }
+            .deposit{
+                border-top-left-radius: 10px;
+            }
+            .buy{
+                border-top-right-radius: 10px;
+                text-decoration: line-through;
+                opacity: 0.4;
+
+            }
+            .active{
+                background: linear-gradient(to bottom, #5d73ef, #4355d9);
+            }
+        }
+        .input-amount-wrapper{
+            padding: 30px 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .amount{
+                display: block;
+                margin: 0 auto;
+                // margin-left: 22%;
+                background: transparent;
+                width: 35%;
+                height: 80px;
+                text-align: center;
+                font-size: 51px;
+                border: 2px solid transparent;
+                border-radius: 5px;
+                &:focus{
+                    border: 2px solid #28293f;
+                }
+                // Chrome, Safari, Edge, Opera
+                &::-webkit-inner-spin-button,
+                &::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+                // Firefox
+                -moz-appearance: textfield;
+            }
+            .currency{
+                display: flex;
+                align-items: center;
+                padding: 5px 6px;
+                position: absolute;
+                right: 10px;
+                gap: 4px;
+                background-color: #28293f;
+                border-radius: 10px;
+                transition: 0.3s ease background;
+                cursor: pointer;
+                .currency-img{
+                    margin-top: 2px;
+                    height: fit-content;
+                    height: 20px;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                .currency-symbol{
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                &:active{
+                    background: #191927;
+                }
+            }
+        }
+        .popular-amount-wrapper{
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px;
+            padding-top: 0;
+            .amount-item{
+                background-color: #28293f;
+                min-width: 80px;
+                height: 60px;
+                flex-basis: 1;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                font-weight: 500;
+                transition: 0.3s ease background;
+                cursor: pointer;
+                &:active{
+                    background: #191927;
+                }
+            }
+        }
+        .payment-methods{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            margin-top: 20px;
+            .payment-item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                width: 100%;
+                background-color: #28293f;
+                padding: 20px 0;
+                border-radius: 10px;
+                border: 2px solid transparent;
+                img{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+                p{
+                    font-weight: 500;
+                }
+            }
+            .activeMethod{
+                border: 2px solid #5d73ef;
+
+            }
+            .inactive{
+                opacity: 0.4;
+            }
+        }
+        .deposit-btn{
+            width: calc(100% - 20px);
+            background-color: #4158e0;
+            padding: 14px 0;
+            margin: 0 10px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: 0.3s ease background;
+            cursor: pointer;
+                &:active{
+                    background: #1e2a74;
+                }
+        }
+        .error{
+            color: rgb(218, 44, 44);
+            font-weight: 500;
+            font-size: 11px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 6px;
+            text-transform: none;
+        }
+    }
+    .currencies{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+}
+
+.select-currency-popup-wrapper{
+    position: fixed;
+    width: 100%;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.5);
+    transition: bottom 0.2s ease-in-out;
+    z-index: 200;
+    .select-currency-popup{
+        margin-top: 40px;
+        width: 100%;
+        height: 96vh;
+        padding: 20px;
+        background-color: #13161f;
+        .title{
+            color: #FFF;
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: none;
+
+        }
+        .right-secured{
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            text-transform: none;
+
+        }
+ 
+        .currency-method{
+            width: 100%;
+            background-color: #656565;
+            display: flex;
+            gap: 15px;
+            padding: 15px 10px;
+            align-items: center;
+            border-radius: 10px;
+            position: relative;
+            cursor: not-allowed;
+            margin-bottom: 15px;
+            .icon{
+                width: 35px;
+                height: 35px;
+                img{
+                    width: 100%;
+                    height: 35px;
+                }
+            }
+            .currency{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                color: #FFF;
+                font-size: 16px;
+                span{
+                    font-weight: 600;
+                    text-align: left;
+                }
+            }
+            .amount{
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                font-size: 17px;
+                font-weight: 700;
+            }
+            .terms-conditions{
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+                img{
+                    width: 14px;
+                }
+                span{
+                    text-transform: none;
+                    font-size: 12px;
+                    font-weight: 700;
+                    color: #FFF;
+                }
+            }
+        }
+        .selected-currency{
+            margin-bottom: 30px;
+            background-color: #647af4;
+            cursor: pointer;
+            transition: 0.3s ease background;
+            &:active{
+                background: #28293f;
+            }
+            &:hover{
+                background: #28293f;
+            }
+        }
+    }
+}
+
+.popup_open {
+    bottom: 0; /* когда попап открыт, он перемещается в пределы видимой области экрана */
+    // &::before{
+    //     content: '';
+    //     position: fixed;
+    //     z-index: 50;
+    //     background-color: rgb(0, 0, 0);
+    //     width: 100%;
+    //     height: calc(4%);
+    //     top: 0;
+    //     left: 0;
+    // }
+  }
